@@ -1,4 +1,29 @@
+import { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/auth/auth_context';
+
+
 const LoginForm = ({ setNewUser }) => {
+  const nav = useNavigate();
+  const { login } = useAuth();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await login(forData);
+    console.log
+  }
+
   const handleClick = () => {
     setNewUser(true);
   };

@@ -55,9 +55,7 @@ export const UserProvider = ({children}) => {
     );
 
 
-    return <AuthContext.Provider>
-        {children}
-    </AuthContext.Provider>;
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 //invoke usecontext in a function so in other components you don't have to import both useContext and the context itself. You only importuseAuth.

@@ -11,6 +11,7 @@ function App() {
       <h2>My App</h2>
       <Routes>
         <Route path='/auth' element={<AuthPage />} />
+        <Route element={<ProtectedRoutes/>}></Route>
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </>
